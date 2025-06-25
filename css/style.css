@@ -6,6 +6,96 @@ body {
   color: #1a1a1a;
 }
 
+.nav-bar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+/* NAVIGATION */
+.nav-bar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 16px;
+  z-index: 1000;
+}
+
+.nav-button {
+  background: #D2D2D2;
+  border-radius: 24px;
+  box-shadow:
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #363636;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.05);
+  background: #CACACA;
+}
+
+/* MENU BUTTON */
+.menu-button {
+  width: 48px;
+  height: 48px;
+  padding: 0; /* override nav-button padding */
+}
+
+.menu-button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* RESUME BUTTON */
+.resume-button {
+  padding: 12px 24px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 32px; /* ensure nav doesn't overlap */
+}
+
+/* HERO META */
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.hero-location,
+.hero-email {
+  margin: 0;
+  font-style: normal !important;
+  text-transform: uppercase;
+}
+
+
 .page-wrapper {
   padding-left: 16px;
   padding-right: 16px;
@@ -332,3 +422,175 @@ body {
 .fade-delay-4 { animation-delay: 0.6s; }
 .fade-delay-5 { animation-delay: 0.8s; }
 .fade-delay-6 { animation-delay: 1s; }
+
+
+
+
+
+
+
+
+/*   ********************* Home page ************************ */
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Sets exact 8px gap between location and email */
+  margin-bottom: 40px; /* Optional: spacing below the info block */
+}
+
+.hero-location {
+  color: #363636;
+  text-align: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 14px;
+  font-style: normal !important;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1.26px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.hero-email {
+  color: #C8C8C8;
+  text-align: center;
+  font-family: 'inter', sans-serif;
+  font-size: 10px;
+  font-style: normal !important;
+  font-weight: 500;
+  line-height: 10px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-title {
+  width: 681px;
+  color: #333;
+  text-align: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 80px; /* 80% */
+  letter-spacing: -2.016px;
+  text-transform: uppercase;
+  margin: 0 auto 40px;
+}
+
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+}
+
+.hero-card {
+  width: 202px;
+  height: 202px;
+  border-radius: 16px;
+  background: #f1f1f1;
+  box-shadow:
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
+  margin-right: -80px;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.85) rotate(0deg) translateY(0);
+  animation: heroCardEnter 0.6s ease-out forwards;
+  transform: scale(0.85);
+}
+
+/* Overlapping and rotation per card */
+.card-1 {
+  --rotate: 2deg;
+  --translateY: 0px;
+  z-index: 1;
+  animation-delay: 0s;
+}
+.card-2 {
+  --rotate: -3deg;
+  --translateY: -20px;
+  z-index: 2;
+  animation-delay: 0.1s;
+}
+.card-3 {
+  --rotate: 6deg;
+  --translateY: 0px;
+  z-index: 3;
+  animation-delay: 0.2s;
+}
+.card-4 {
+  --rotate: -2deg;
+  --translateY: -18px;
+  z-index: 4;
+  animation-delay: 0.3s;
+}
+
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rotate)) translateY(var(--translateY));
+  }
+}
+
+.hero-card {
+  animation: scaleIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delays for individual cards */
+.card-1 { animation-delay: 0s; }
+.card-2 { animation-delay: 0.1s; }
+.card-3 { animation-delay: 0.2s; }
+.card-4 { animation-delay: 0.3s; }
+
+
+
+.hero-subtitle {
+  color: #949494;
+  text-align: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110px;
+  letter-spacing: -2.016px;
+  text-transform: uppercase;
+  margin-top: 40px; /* 40px below the cards */
+  margin-bottom: 16px; /* 40px below the cards */
+}
+
+.clients-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 120px;
+}
+
+.clients-label {
+  color: #363636;
+  text-align: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 14px;
+  font-style: normal !important;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1.26px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit; /* keeps the card's 16px rounded corners */
+  display: block;
+}

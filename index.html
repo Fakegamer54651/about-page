@@ -3,19 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <title>Home | BEK</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
 
 </head>
+
+
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a>
-  </nav>
 
-  <h1>Welcome to My Website</h1>
 
+  
+  <div class="page-wrapper">
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+      <a href="about.html" class="nav-button menu-button" aria-label="Go to About Page">
+        <img src="assets/menu.svg" alt="Menu" />
+      </a>
+      <a href="assets/AsilbekBek_Resume.pdf" class="nav-button resume-button" target="_blank">
+       RESUME
+      </a>
+</nav>
+
+
+    <!-- Hero Section -->
+     
+    <section class="hero-section">
+      <div class="hero-info">
+        <p class="hero-location">TASHKENT, UZBEKISTAN</p>
+        <p class="hero-email">ASILBEKKHAMIDULLAYEVV@GMAIL.COM</p>
+      </div>
+
+      <h1 class="hero-title animate-text-flip">CALL ME, BEK</h1>
+
+      <div class="hero-cards">
+
+        <div class="hero-card card-1 card-reveal" style="animation-delay: 0.2s;">
+          <img src="assets/hero-image-01.webp" alt="Hero Image 01" />
+        </div>
+
+        <div class="hero-card card-2 card-reveal" style="animation-delay: 0.4s;">
+          <img src="assets/hero-image-02.webp" alt="Hero Image 02" />
+        </div>
+
+        <div class="hero-card card-3 card-reveal" style="animation-delay: 0.6s;">
+          <img src="assets/hero-image-03.webp" alt="Hero Image 03" />
+        </div>
+
+        <div class="hero-card card-4 card-reveal" style="animation-delay: 0.8s;">
+          <img src="assets/hero-image-04.webp" alt="Hero Image 04" />
+        </div>
+
+      </div>
+
+      
+      <h2 class="hero-subtitle">PRODUCT & MOTION<br>DESIGNER</h2>
+
+      <div class="clients-section">
+        <p class="clients-label">CLIENTS INCLUDE</p>
+        <p class="hero-email">ABOZOR, TOYOTA, TIZIM, CLIQUE.APP, MAXWAY, DELEVER, SNAPTOOLS</p>
+      </div>
+
+
+    </section>
+
+  </div>
   <script src="js/script.js"></script>
 </body>
 </html>

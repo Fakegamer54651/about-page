@@ -54,3 +54,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeIns = document.querySelectorAll('.fade-in-up');
   revealOnScroll(fadeIns, '0px 0px -20% 0px');
 });
+
+
+
+
+
+
+
+// ******************* Home page
+
+document.addEventListener('DOMContentLoaded', () => {
+  revealOnScroll(document.querySelectorAll('.fade-in-up'), '0px 0px -20% 0px');
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.hero-card').forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add('card-final-' + (i + 1));
+    }, 1000 + (i * 100));
+  });
+});
