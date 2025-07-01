@@ -57,10 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
 // ******************* Home page
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -72,5 +68,39 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       card.classList.add('card-final-' + (i + 1));
     }, 1000 + (i * 100));
+  });
+});
+
+// modal opening logic
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('project-modal');
+  const modalIframe = document.getElementById('modal-iframe');
+  const modalClose = document.getElementById('modal-close');
+
+  console.log('✅ DOM is ready');
+
+  document.querySelectorAll('.featured-card-wrapper').forEach(card => {
+    console.log('Found card:', card);
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project');
+      console.log('Card clicked:', projectId);
+      modalIframe.src = `${projectId}.html`;
+      modal.removeAttribute('hidden');
+    });
+  });
+
+  modalClose.addEventListener('click', () => {
+    console.log('Close button clicked');
+    modal.setAttribute('hidden', true);
+    modalIframe.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      console.log('Clicked outside iframe');
+      modal.setAttribute('hidden', true);
+      modalIframe.src = '';
+    }
   });
 });

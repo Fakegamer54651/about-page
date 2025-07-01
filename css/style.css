@@ -1,3 +1,5 @@
+/* ─── GLOBAL NAVIGATION ─────────────────── */
+
 body {
   margin: 0;
   padding: 0;
@@ -6,27 +8,23 @@ body {
   color: #1a1a1a;
 }
 
+.page-wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .nav-bar {
   position: fixed;
   top: 20px;
-  left: 0;
-  right: 0;
+  left: 12px;
+  right: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
+  z-index: 9999;
+  pointer-events: auto;
 }
 
-/* NAVIGATION */
-.nav-bar {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  gap: 16px;
-  z-index: 1000;
-}
 
 .nav-button {
   background: #D2D2D2;
@@ -44,18 +42,19 @@ body {
   font-family: 'Schibsted Grotesk', sans-serif;
   font-weight: 600;
   transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: auto;
+
 }
 
 .nav-button:hover {
-  transform: scale(1.05);
-  background: #CACACA;
+  transform: scale(1.1);
 }
 
-/* MENU BUTTON */
 .menu-button {
   width: 48px;
   height: 48px;
-  padding: 0; /* override nav-button padding */
+  padding: 0;
+  pointer-events: auto;
 }
 
 .menu-button img {
@@ -63,23 +62,26 @@ body {
   height: 20px;
 }
 
-/* RESUME BUTTON */
 .resume-button {
   padding: 12px 24px;
   font-size: 14px;
   letter-spacing: 0.5px;
+  pointer-events: auto;
 }
 
-/* HERO SECTION */
+
+/* ─── HERO SECTION ─────────────────── */
+
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 32px; /* ensure nav doesn't overlap */
+  padding-top: 32px;
+  position: relative;
+  z-index: 1; /* Ensure this sits below nav-bar */
 }
 
-/* HERO META */
 .hero-info {
   display: flex;
   flex-direction: column;
@@ -88,397 +90,59 @@ body {
   margin-bottom: 40px;
 }
 
-.hero-location,
-.hero-email {
-  margin: 0;
-  font-style: normal !important;
-  text-transform: uppercase;
-}
-
-
-.page-wrapper {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-/* Unified Title Styles */
-.about-section h1,
-.projects-section h2,
-.contact-section h2 {
-  color: #363636;
-  text-align: center;
-  font-family: 'Schibsted Grotesk', sans-serif;
-  font-size: 64px;
-  font-style: italic;
-  font-weight: 900;
-  line-height: 64px;
-  letter-spacing: -1.28px;
-  text-transform: uppercase;
-  margin-bottom: 80px;
-}
-
-/* ABOUT Section */
-.about-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.paragraph-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
-  gap: 40px;
-  width: 940px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.paragraph-block p {
-  color: #363636;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 56px;
-  letter-spacing: -0.5px;
-  margin: 0;
-}
-
-/* Project Section */
-.projects-section {
-  margin-top: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.projects-section h2 {
-  color: #363636;
-  text-align: center;
-  font-family: 'Schibsted Grotesk', sans-serif;
-  font-size: 64px;
-  font-style: italic;
-  font-weight: 900;
-  line-height: 64px;
-  letter-spacing: -1.28px;
-  text-transform: uppercase;
-  margin-bottom: 60px;
-}
-
-.project-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-}
-
-.project-list li {
-  color: #363636;
-  text-align: center;
-  font-family: 'Schibsted Grotesk', sans-serif;
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 56px;
-  letter-spacing: -0.5px;
-  text-transform: uppercase;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.project-list li:hover {
-  transform: scaleY(1.1);
-}
-
-@keyframes bounce-stretch {
-  0% { transform: scaleY(1); }
-  50% { transform: scaleY(1.12); }
-  100% { transform: scaleY(1.1); }
-}
-
-/* Contact Section */
-.contact-section {
-  margin-top: 150px;
-  margin-bottom: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-section .contacts {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.contact-section a {
-  color: #363636;
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.contact-section i {
-  font-size: 16px;
-  color: #333;
-  text-align: center;
-  font-family: 'Schibsted Grotesk';
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  text-transform: uppercase;
-}
-
-/* Close Button */
-.close-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #D2D2D2;
-  border-radius: 24px;
-  box-shadow: 
-    0px 9px 21px rgba(0, 0, 0, 0.10),
-    0px 38px 38px rgba(0, 0, 0, 0.09),
-    0px 85px 51px rgba(0, 0, 0, 0.05),
-    0px 151px 60px rgba(0, 0, 0, 0.01);
-  z-index: 1000;
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.close-button img {
-  width: 19px;
-  height: 19px;
-}
-
-.close-button:hover {
-  transform: scale(1.1);
-}
-
-/* Conditional Line Breaks */
-.desktop-br { display: inline; }
-.mobile-br { display: none; }
-
-/* 📱 Mobile Layout: max-width: 375px */
-@media (max-width: 376px) {
-  .page-wrapper {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 100px;
-  }
-
-  .desktop-br { display: none; }
-  .mobile-br { display: inline; }
-
-  .about-section {
-    margin-top: 0;
-  }
-
-  .about-section h1 {
-    color: #333333;
-    font-family: 'Schibsted Grotesk', sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 80px;
-    letter-spacing: -2.016px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .paragraph-block {
-    width: 100%;
-  }
-
-  .paragraph-block p {
-    font-size: 18px;
-    line-height: 32px;
-    letter-spacing: -0.4px;
-    margin: 0;
-  }
-
-  .projects-section {
-    margin-top: 90px;
-  }
-
-  .project-list li {
-    font-size: 32px;
-    line-height: 36px;
-    letter-spacing: -0.3px;
-  }
-
-  .projects-section h2,
-  .contact-section h2 {
-    font-size: 36px;
-    line-height: 42px;
-    letter-spacing: -0.7px;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-
-  .contact-section {
-    margin-top: 90px;
-    margin-bottom: 120px;
-  }
-}
-
-/* 🌀 Flip + Stretch Entrance Animation */
-@keyframes textFlipUp {
-  0% {
-    transform: rotateX(-90deg) scaleY(0.8);
-    opacity: 0;
-  }
-  60% {
-    transform: rotateX(20deg) scaleY(1.12);
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(0deg) scaleY(1);
-  }
-}
-
-.animate-text-flip {
-  animation: textFlipUp 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  transform-origin: bottom center;
-  backface-visibility: hidden;
-}
-
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-
-.animate-paragraph {
-  animation: fadeInUp 0.6s ease-out forwards;
-  transform-origin: bottom center;
-  opacity: 0;
-}
-
-.animate-delay-1 { animation-delay: 0s; }
-.animate-delay-2 { animation-delay: 0.2s; }
-.animate-delay-3 { animation-delay: 0.4s; }
-
-.paragraph-block p {
-  opacity: 1;
-  color: #949494;
-  transition: all 0.4s ease;
-}
-
-.paragraph-block p.paragraph-focused {
-  opacity: 1;
-  color: #363636;
-}
-
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-delay-1 { animation-delay: 0s; }
-.fade-delay-2 { animation-delay: 0.2s; }
-.fade-delay-3 { animation-delay: 0.4s; }
-.fade-delay-4 { animation-delay: 0.6s; }
-.fade-delay-5 { animation-delay: 0.8s; }
-.fade-delay-6 { animation-delay: 1s; }
-
-
-
-
-
-
-
-
-/*   ********************* Home page ************************ */
-
-.hero-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px; /* Sets exact 8px gap between location and email */
-  margin-bottom: 40px; /* Optional: spacing below the info block */
-}
-
 .hero-location {
   color: #363636;
-  text-align: center;
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 14px;
-  font-style: normal !important;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 1.26px;
   text-transform: uppercase;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .hero-email {
   color: #C8C8C8;
-  text-align: center;
-  font-family: 'inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
-  font-style: normal !important;
   font-weight: 500;
   line-height: 10px;
   letter-spacing: 0.9px;
   text-transform: uppercase;
   margin: 0;
+  text-align: center;
 }
+
+
+/* ─── HERO TITLE AND SUBTITLE ─────────────────── */
 
 .hero-title {
   width: 681px;
   color: #333;
-  text-align: center;
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 100px;
-  font-style: normal;
   font-weight: 800;
-  line-height: 80px; /* 80% */
+  line-height: 80px;
   letter-spacing: -2.016px;
   text-transform: uppercase;
   margin: 0 auto 40px;
 }
+
+.hero-subtitle {
+  color: #949494;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 110px;
+  letter-spacing: -2.016px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+
+/* ─── HERO CARDS ─────────────────── */
 
 .hero-cards {
   display: flex;
@@ -500,12 +164,19 @@ body {
   margin-right: -80px;
   position: relative;
   opacity: 0;
-  transform: scale(0.85) rotate(0deg) translateY(0);
-  animation: heroCardEnter 0.6s ease-out forwards;
   transform: scale(0.85);
+  animation: scaleIn 0.6s ease-out forwards;
 }
 
-/* Overlapping and rotation per card */
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+/* Per card rotation + height */
 .card-1 {
   --rotate: 2deg;
   --translateY: 0px;
@@ -531,7 +202,7 @@ body {
   animation-delay: 0.3s;
 }
 
-
+/* Animation */
 @keyframes scaleIn {
   to {
     opacity: 1;
@@ -539,32 +210,10 @@ body {
   }
 }
 
-.hero-card {
-  animation: scaleIn 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-/* Delays for individual cards */
-.card-1 { animation-delay: 0s; }
-.card-2 { animation-delay: 0.1s; }
-.card-3 { animation-delay: 0.2s; }
-.card-4 { animation-delay: 0.3s; }
 
 
 
-.hero-subtitle {
-  color: #949494;
-  text-align: center;
-  font-family: 'Schibsted Grotesk', sans-serif;
-  font-size: 100px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110px;
-  letter-spacing: -2.016px;
-  text-transform: uppercase;
-  margin-top: 40px; /* 40px below the cards */
-  margin-bottom: 16px; /* 40px below the cards */
-}
+/* ─── CLIENTS SECTION ─────────────────── */
 
 .clients-section {
   display: flex;
@@ -576,10 +225,8 @@ body {
 
 .clients-label {
   color: #363636;
-  text-align: center;
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 14px;
-  font-style: normal !important;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 1.26px;
@@ -587,10 +234,302 @@ body {
   margin-bottom: 0;
 }
 
-.hero-card img {
+/* ─── FEATURED WORK ─────────────────── */
+
+.featured-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 220px;
+}
+
+.featured-title {
+  color: #363636;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.featured-description {
+  color: #6C6C6C;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+}
+
+.featured-section {
+  margin-top: 220px; /* 220px below clients section */
+  text-align: center;
+}
+
+.featured-title {
+  color: #363636;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 64px;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.featured-description {
+  color: #6C6C6C;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 32px auto 48px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(628px, 1fr));
+  gap: 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+
+
+.featured-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.featured-card {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 376px;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.featured-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: inherit; /* keeps the card's 16px rounded corners */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.featured-card:hover img {
+  transform: scale(1.03);
+}
+
+.featured-tag {
+  padding: 10px 20px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(6px);
+  color: #363636;
+  transition: all 0.3s ease;
+}
+
+.featured-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 
+  0px 9px 21px rgba(0, 0, 0, 0.10),
+  0px 38px 38px rgba(0, 0, 0, 0.09),
+  0px 85px 51px rgba(0, 0, 0, 0.05),
+  0px 151px 60px rgba(0, 0, 0, 0.01);
+;
+}
+
+
+
+/* ─── FEATURED WORK CARDS MODAL ─────────────────── */
+.project-modal-overlay[hidden] {
+  display: none !important;
+}
+
+.project-modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-iframe {
+  width: 90%;
+  height: 90%;
+  border: none;
+  border-radius: 12px;
+  background: white;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 10000;
+}
+
+
+/* ─── UI SHOTS  ─────────────────── */
+
+.ui-shots-section {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.ui-shots-title {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  color: #363636;
+  margin-bottom: 64px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+.ui-shots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 416px);
+  gap: 64px;
+  justify-content: center;
+}
+
+.ui-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ui-card {
+  width: 416px;
+  height: 249px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-card img,
+.ui-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* can use contain for specific cases */
+  border-radius: inherit;
   display: block;
 }
+
+.ui-card video.too-big {
+  object-fit: contain;
+  width: 180px;
+  height: 220px;
+  height: auto;
+  background: #f1f1f1;
+}
+
+
+.ui-tag {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #363636;
+  transition: all 0.3s ease;
+}
+
+.video-frame {
+  width: 180px;
+  height: 238px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+/* ─── Reach out ──────────────────────────── */
+
+
+.contact-section {
+  font-size: 64px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  color: #363636;
+  margin-top: 150px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section .contacts {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-section a {
+  color: #363636;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-section i {
+  font-size: 16px;
+  color: #333;
+  font-family: 'Schibsted Grotesk';
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+/* ─── RESPONSIVE ************************************************************************************************************************ ──────────────────────────── */
+

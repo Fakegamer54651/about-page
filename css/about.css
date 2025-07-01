@@ -1,0 +1,264 @@
+/* ─── LAYOUT RESET & WRAPPER ───────────────────── */
+.page-wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ─── TYPOGRAPHY SHARED TITLES ─────────────────── */
+.about-section h1,
+.projects-section h2,
+.contact-section h2 {
+  color: #363636;
+  text-align: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 64px;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+
+/* ─── ABOUT SECTION ────────────────────────────── */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.paragraph-block {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  gap: 40px;
+  width: 940px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.paragraph-block p {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  color: #363636;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -0.5px;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+.paragraph-block p.paragraph-focused {
+  color: #363636;
+}
+
+.paragraph-block p:not(.paragraph-focused) {
+  color: #949494;
+}
+
+/* ─── PROJECTS SECTION ─────────────────────────── */
+.projects-section {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.project-list li {
+  color: #363636;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-list li:hover {
+  transform: scaleY(1.1);
+}
+
+/* ─── CONTACT SECTION ──────────────────────────── */
+.contact-section {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section .contacts {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-section a {
+  color: #363636;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-section i {
+  font-size: 16px;
+  color: #333;
+  font-family: 'Schibsted Grotesk';
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+/* ─── CLOSE BUTTON ─────────────────────────────── */
+.close-button {
+  position: fixed;
+  top: 20px;
+  left: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D2D2D2;
+  border-radius: 24px;
+  box-shadow:
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+.close-button img {
+  width: 19px;
+  height: 19px;
+}
+
+/* ─── ANIMATIONS ───────────────────────────────── */
+@keyframes textFlipUp {
+  0% {
+    transform: rotateX(-90deg) scaleY(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: rotateX(20deg) scaleY(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg) scaleY(1);
+  }
+}
+
+.animate-text-flip {
+  animation: textFlipUp 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  transform-origin: bottom center;
+  backface-visibility: hidden;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-paragraph {
+  animation: fadeInUp 0.6s ease-out forwards;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+.animate-delay-1 { animation-delay: 0s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.4s; }
+
+/* ─── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 376px) {
+  .page-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 100px;
+  }
+
+  .about-section {
+    margin-top: 0;
+  }
+
+  .about-section h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: -2.016px;
+    margin-bottom: 50px;
+  }
+
+  .paragraph-block {
+    width: 100%;
+  }
+
+  .paragraph-block p {
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -0.4px;
+  }
+
+  .projects-section {
+    margin-top: 90px;
+  }
+
+  .project-list li {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -0.3px;
+  }
+
+  .projects-section h2,
+  .contact-section h2 {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.7px;
+    margin-bottom: 50px;
+  }
+
+  .contact-section {
+    margin-top: 90px;
+    margin-bottom: 120px;
+  }
+}
+
+/* ─── UTILITY BREAKS ───────────────────────────── */
+.desktop-br { display: inline; }
+.mobile-br { display: none; }
+

@@ -6,15 +6,10 @@
   <title>Home | BEK</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
-
-
-  
   <div class="page-wrapper">
 
     <!-- Navigation -->
@@ -23,13 +18,11 @@
         <img src="assets/menu.svg" alt="Menu" />
       </a>
       <a href="assets/AsilbekBek_Resume.pdf" class="nav-button resume-button" target="_blank">
-       RESUME
+        RESUME
       </a>
-</nav>
-
+    </nav>
 
     <!-- Hero Section -->
-     
     <section class="hero-section">
       <div class="hero-info">
         <p class="hero-location">TASHKENT, UZBEKISTAN</p>
@@ -58,18 +51,145 @@
 
       </div>
 
-      
       <h2 class="hero-subtitle">PRODUCT & MOTION<br>DESIGNER</h2>
 
       <div class="clients-section">
         <p class="clients-label">CLIENTS INCLUDE</p>
         <p class="hero-email">ABOZOR, TOYOTA, TIZIM, CLIQUE.APP, MAXWAY, DELEVER, SNAPTOOLS</p>
       </div>
-
-
     </section>
 
+    <!-- Featured Work Section -->
+<section class="featured-section">
+  <h2 class="featured-title">FEATURED WORK</h2>
+  <p class="featured-description">notable projects</p>
+
+  <div class="featured-grid">
+    <div class="featured-card-wrapper" data-project="case1">
+      <div class="featured-card">
+        <img src="assets/project1.png" alt="Project 1">
+      </div>
+      <div class="featured-tag">Project One</div>
+    </div>
+
+    <div class="featured-card-wrapper" data-project="case2">
+      <div class="featured-card">
+        <img src="assets/project2.png" alt="Project 2">
+      </div>
+      <div class="featured-tag">Project Two</div>
+    </div>
+
+    <div class="featured-card-wrapper" data-project="case3">
+      <div class="featured-card">
+        <img src="assets/project3.png" alt="Project 3">
+      </div>
+      <div class="featured-tag">Project Three</div>
+    </div>
+
+    <div class="featured-card-wrapper" data-project="case4">
+      <div class="featured-card">
+        <img src="assets/project4.png" alt="Project 4">
+      </div>
+      <div class="featured-tag">Project Four</div>
+    </div>
   </div>
-  <script src="js/script.js"></script>
+</section>
+
+
+<!-- PROJECT MODAL -->
+
+
+<div id="project-modal" class="project-modal-overlay" hidden>
+  <button id="modal-close" class="modal-close">✕</button>
+  <iframe id="modal-iframe" class="modal-iframe" allowfullscreen></iframe>
+</div>
+
+<script src="js/script.js"></script>
+
+
+
+<!-- UI SHOTS -->
+<section class="ui-shots-section">
+  <h2 class="ui-shots-title">UI SHOTS</h2>
+  <div class="ui-shots-grid">
+
+    <!-- IMAGE 1 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <img src="assets/UI1.jpg" alt="UI Shot 1" class="fit-cover">
+      </div>
+      <div class="ui-tag">Project One</div>
+    </div>
+
+    <!-- VIDEO 1 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <video autoplay muted loop playsinline class="too-big">
+          <source src="assets/ui-shot-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="ui-tag">SHOT Two</div>
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <img src="assets/UI3.jpg" alt="UI Shot 3" class="fit-cover">
+      </div>
+      <div class="ui-tag">Project Three</div>
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <img src="assets/UI4.jpg" alt="UI Shot 5" class="fit-cover">
+      </div>
+      <div class="ui-tag">Project Five</div>
+    </div>
+
+    <!-- VIDEO 2 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <video autoplay muted loop playsinline class="fit-contain">
+          <source src="assets/ui-shot-video2.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="ui-tag">SHOT Four</div>
+    </div>
+
+    <!-- IMAGE 4 -->
+    <div class="ui-card-wrapper">
+      <div class="ui-card">
+        <img src="assets/UI6.jpg" alt="UI Shot 6" class="fit-cover">
+      </div>
+      <div class="ui-tag">Project Six</div>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- Contact Section -->
+      <section class="contact-section">
+        <h2 class="fade-in-up fade-delay-1">REACH OUT</h2>
+        <div class="contacts">
+          <a href="#" class="contact-link fade-in-up fade-delay-2">
+            <img src="assets/linkedin.svg" alt="LinkedIn" />
+            <span>LINKEDIN</span>
+          </a>
+          <a href="#" class="contact-link fade-in-up fade-delay-3">
+            <img src="assets/email.svg" alt="Email" />
+            <span>EMAIL</span>
+          </a>
+          <a href="#" class="contact-link fade-in-up fade-delay-4">
+            <img src="assets/telegram.svg" alt="Telegram" />
+            <span>TELEGRAM</span>
+          </a>
+        </div>
+      </section>
+
+
+
 </body>
 </html>
+
