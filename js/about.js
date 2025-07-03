@@ -74,3 +74,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000 + (i * 100));
   });
 });
+
+// Page Transition System - Only for page exit
+function initPageTransitions() {
+  // Ensure page starts from top
+  window.scrollTo(0, 0);
+  
+  // Handle navigation links
+  const navLinks = document.querySelectorAll('a[href]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Only handle internal links (not external, mailto, or hash links)
+      if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('http')) {
+        e.preventDefault();
+        
+        // Show overlay
+        const overlay = document.querySelector('.page-transition-overlay');
+        overlay.classList.add('active');
+        
+        // Fade out individual elements
+        const elementsToFade = document.querySelectorAll('.close-button, .about-section, .projects-section, .contact-section, .paragraph-block, .project-list, .contacts');
+        
+        gsap.to(elementsToFade, {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in",
+          stagger: 0.02,
+          onComplete: () => {
+            // Navigate to new page
+            window.location.href = href;
+          }
+        });
+      }
+    });
+  });
+}
+
+// Initialize page transitions on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initPageTransitions();
+});

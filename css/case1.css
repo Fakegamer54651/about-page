@@ -1,0 +1,576 @@
+/* ================================================
+   TOYOTA CASE STUDY STYLES
+   ================================================
+   
+   Table of Contents:
+   1. CSS Reset & Base Styles
+   2. Navigation Bar
+   3. Case Study Layout
+   4. Typography System
+   5. Hero Section
+   6. Case Study Sections
+   7. Image Placeholders & Grids
+   8. Results Section
+   9. Responsive Design
+   
+   ================================================ */
+
+/* ================================================
+   1. CSS RESET & BASE STYLES
+   ================================================ */
+
+/* Reset and base styles for case study page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  background-color: #fff;
+  color: #1a1a1a;
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================================================
+   2. NAVIGATION BAR
+   ================================================ */
+
+/* Case study navigation bar */
+.nav-bar {
+  position: fixed;
+  top: 1.25rem; /* 20px in rem */
+  left: 0.7rem; /* 20px in rem */
+  right: 1.25rem; /* 20px in rem */
+  display: flex;
+  justify-content: flex-start; /* Position button on the left */
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Navigation buttons styling - matching main page menu/resume buttons */
+.nav-button {
+  background: #D2D2D2;
+  border: none;
+  border-radius: 1.5rem; /* 24px in rem */
+  box-shadow:
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #363636;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  transform: scale(1.1); /* Same as main page menu button */
+}
+
+/* Back button specific styling - 48x48px in rem */
+.back-button {
+  width: 3rem; /* 48px */
+  height: 3rem; /* 48px */
+  padding: 0;
+  border-radius: 1.5rem; /* 24px - half of 48px for perfect circle */
+}
+
+.back-button img {
+  width: 1.1875rem; /* 19px - same as about page close icon */
+  height: 1.1875rem; /* 19px */
+}
+
+/* ================================================
+   3. CASE STUDY LAYOUT
+   ================================================ */
+
+/* Main case study container */
+.case-container {
+  max-width: 53.75rem; /* 860px converted to rem for responsiveness */
+  margin: 0 auto;
+  padding: 4rem 2rem 4rem;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ================================================
+   4. TYPOGRAPHY SYSTEM
+   ================================================ */
+
+/* Main case study title */
+.case-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 4rem; /* 64px */
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #363636;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Case description text */
+.case-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6C6C6C;
+  margin-bottom: 3rem;
+  max-width: 45rem;
+}
+
+/* Section titles */
+.section-title {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: -0.01em;
+  color: #444444;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+/* Section body text */
+.section-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 400;
+  line-height: 32px;
+  color: #5f5f5f;
+  margin-bottom: 2rem;
+  max-width: 50rem;
+}
+
+/* ================================================
+   5. HERO SECTION
+   ================================================ */
+
+/* Hero section layout */
+.case-hero {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+/* Hero images grid layout */
+.hero-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Top hero images side by side */
+.hero-image-top {
+  width: 100%;
+}
+
+/* Bottom hero image spans full width */
+.hero-image-bottom {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* ================================================
+   6. CASE STUDY SECTIONS
+   ================================================ */
+
+/* Individual case study sections */
+.case-section {
+  margin-bottom: 5rem;
+  text-align: left;
+}
+
+/* Section images vertical layout */
+.section-images-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Single section image - no fixed height to maintain aspect ratio */
+.section-image {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Interactions vertical layout */
+.interactions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.interactions-grid .section-image {
+  margin-top: 0;
+  width: 100%;
+}
+
+/* ================================================
+   7. IMAGE PLACEHOLDERS & GRIDS
+   ================================================ */
+
+/* Image styling for all case study images */
+.hero-image-top img,
+.hero-image-bottom img,
+.section-image img,
+.interactions-grid .section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-image-top img:hover,
+.hero-image-bottom img:hover,
+.section-image img:hover,
+.interactions-grid .section-image img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D2D2D2;
+  border: none;
+  border-radius: 24px;
+  box-shadow:
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10001;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+.modal-close img {
+  width: 19px;
+  height: 19px;
+}
+
+/* Image placeholder styling (fallback) */
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  border: 2px dashed #d0d0d0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.image-placeholder:hover {
+  border-color: #bbb;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  transform: translateY(-2px);
+}
+
+/* ================================================
+   8. RESULTS SECTION
+   ================================================ */
+
+/* Results section - same styling as other sections */
+.results-section {
+  /* No special background or box styling */
+}
+
+/* Results list styling */
+.results-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.results-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+/* Custom bullet points for results */
+.results-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: #4CAF50;
+  font-size: 1.25rem;
+}
+
+.results-list li strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ================================================
+   9. CASE STUDY SPECIFIC STYLES
+   ================================================ */
+
+/* Case study runs inside modal iframe - no additional modal styling needed */
+
+/* ================================================
+   9. SCROLL ANIMATIONS
+   ================================================ */
+
+/* GSAP handles all animations - no CSS animations needed */
+
+/* ================================================
+   10. RESPONSIVE DESIGN
+   ================================================ */
+
+/* Tablet and smaller (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Adjust container padding and width */
+  .case-container {
+    max-width: 100%;
+    padding: 5rem 1.5rem 3rem;
+  }
+  
+  /* Scale down typography */
+  .case-title {
+    font-size: 2.5rem; /* 40px */
+    margin-bottom: 1rem;
+  }
+  
+  .case-description {
+    font-size: 1.125rem; /* 18px */
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem; /* 32px */
+    margin-bottom: 1rem;
+  }
+  
+  .section-text {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Adjust layouts for mobile */
+  .hero-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .hero-image-bottom {
+    grid-column: 1;
+  }
+  
+  /* Stack section images vertically */
+  .section-images-grid {
+    gap: 1rem;
+  }
+  
+  /* Adjust interactions layout */
+  .interactions-grid {
+    gap: 1rem;
+  }
+  
+  /* Results section mobile adjustments */
+  .results-section {
+    /* No special mobile styling needed */
+  }
+  
+  .results-list li {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* Modal mobile adjustments */
+  .case-container .modal-iframe {
+    width: 95vw;
+    height: 85vh;
+    border-radius: 12px;
+  }
+  
+  .case-container .project-modal-overlay {
+    padding: 1rem;
+  }
+}
+
+/* Medium mobile (max-width: 520px) */
+@media (max-width: 520px) {
+  /* UI shots sizing - same as 768px with left padding */
+  .interactions-grid {
+    gap: 1rem;
+    padding-left: 1rem; /* Add left padding */
+  }
+}
+
+/* Small mobile (max-width: 420px) */
+@media (max-width: 420px) {
+  /* UI shots sizing - same as 768px with left padding */
+  .interactions-grid {
+    gap: 1rem;
+    padding-left: 1rem; /* Add left padding */
+  }
+}
+
+/* Extra small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Further typography adjustments */
+  .case-title {
+    font-size: 2rem; /* 32px */
+  }
+  
+  .case-description {
+    font-size: 1rem; /* 16px */
+  }
+  
+  .section-title {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  /* Smaller gaps for mobile */
+  .hero-images,
+  .section-images-grid,
+  .interactions-grid {
+    gap: 0.75rem;
+  }
+  
+  /* Compact results section */
+  .results-section {
+    /* No special mobile styling needed */
+  }
+  
+  /* Navigation adjustments */
+  .nav-bar {
+    left: 1rem;
+    right: 1rem;
+  }
+  
+  .nav-button {
+    font-size: 0.875rem;
+    padding: 10px 16px;
+  }
+
+  .section-image{
+    border-radius: 0.5rem;
+  }
+}
+
+/* Text Selection Color */
+::selection {
+  background-color: #EDEDED;
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: #EDEDED;
+  color: inherit;
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}

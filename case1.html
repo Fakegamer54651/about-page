@@ -2,13 +2,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8">
-  <title>Case 1 – Project Name</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota - Inventory Management System</title>
   <link rel="stylesheet" href="css/case1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="assets/favicontoyota.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Project 1</h1>
-  <p>Deep dive into what the project does...</p>
-  <!-- more content -->
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <a href="index.html" class="nav-button back-button">
+      <img src="assets/close.svg" alt="Back to Home" />
+    </a>
+  </nav>
+
+  <!-- Main Case Study Container -->
+  <main class="case-container">
+    
+    <!-- Hero Section -->
+    <section class="case-hero">
+      <h1 class="case-title">Toyota</h1>
+      <p class="case-description">
+        Designed and optimized the internal inventory management experience to reduce overload by 17%, 
+        improve technician flow, and prevent unauthorized parts handling.
+      </p>
+      
+      <!-- Hero Images Grid -->
+      <div class="hero-images">
+        <div class="hero-image-top">
+          <img src="assets/1.webp" alt="Toyota Inventory System Hero Image 1">
+        </div>
+        <div class="hero-image-top">
+          <img src="assets/2.webp" alt="Toyota Inventory System Hero Image 2">
+        </div>
+        <div class="hero-image-bottom">
+          <img src="assets/3.webp" alt="Toyota Inventory System Hero Image 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- What Company Section -->
+    <section class="case-section">
+      <h2 class="section-title">What company?</h2>
+      <p class="section-text">
+        The official Toyota dealership network in Uzbekistan, responsible for new and used vehicle sales, 
+        aftersales service, and parts management. Operates under Toyota's global standards, adapted to 
+        local infrastructure and team workflows.
+      </p>
+      
+      <div class="section-image">
+        <img src="assets/4.webp" alt="Toyota Company Image">
+      </div>
+    </section>
+
+    <!-- Context Section -->
+    <section class="case-section">
+      <h2 class="section-title">Context</h2>
+      <p class="section-text">
+        Toyota Uzbekistan's mechanical service departments were dealing with outdated, disjointed tools 
+        for managing parts inventory. This created inefficiencies in technician workflow, supply shortages, 
+        and a lack of visibility into how parts were requested, stored, and used.
+      </p>
+    </section>
+
+    <!-- Why Section -->
+    <section class="case-section">
+      <h2 class="section-title">Why?</h2>
+      <p class="section-text">
+        To optimize internal service performance and minimize parts misuse. The previous system was outdated 
+        and inefficient — slow to use and misaligned with how technicians and warehouse staff actually worked. 
+        The new system aimed to reduce product overload, streamline warehouse-to-technician flow, and ensure 
+        better control over parts handling.
+      </p>
+      
+      <div class="section-images-grid">
+        <div class="section-image">
+          <img src="assets/5.webp" alt="Toyota Why Image 1">
+        </div>
+        <div class="section-image">
+          <img src="assets/6.webp" alt="Toyota Why Image 2">
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="case-section">
+      <h2 class="section-title">Problems</h2>
+      <p class="section-text">
+        Through on-site observation of the dealership's day-to-day operations, I studied how technicians 
+        and warehouse staff interacted with the existing system. The research revealed several core issues 
+        in the inventory management flow
+      </p>
+      
+      <div class="section-images-grid">
+        <div class="section-image">
+          <img src="assets/7.webp" alt="Toyota Problems Image 1">
+        </div>
+        <div class="section-image">
+          <img src="assets/8.webp" alt="Toyota Problems Image 2">
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactions Section -->
+    <section class="case-section">
+      <h2 class="section-title">Interactions</h2>
+      <p class="section-text">
+        Beyond layout and visuals, I focused on refining micro-interactions that directly impacted 
+        usability and task efficiency.
+      </p>
+      
+      <div class="interactions-grid">
+        <div class="section-image">
+          <img src="assets/9.webp" alt="Toyota Interaction 1">
+        </div>
+        <div class="section-image">
+          <img src="assets/10.webp" alt="Toyota Interaction 2">
+        </div>
+        <div class="section-image">
+          <img src="assets/11.webp" alt="Toyota Interaction 3">
+        </div>
+        <div class="section-image">
+          <img src="assets/12.webp" alt="Toyota Interaction 4">
+        </div>
+        <div class="section-image">
+          <img src="assets/13.webp" alt="Toyota Interaction 5">
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="case-section results-section">
+      <h2 class="section-title">Results</h2>
+      <p class="section-text">
+        The redesigned inventory system improved service operations across Toyota's dealership in Uzbekistan. 
+        By addressing key interaction issues and aligning the system with real technician and warehouse workflows:
+      </p>
+      
+      <ul class="results-list">
+        <li>Service overload decreased by <strong>17%</strong> (based on internal analytics)</li>
+        <li>Parts misuse dropped significantly due to better access control and traceability</li>
+        <li>Workflow friction was reduced through smarter, context-aware micro-interactions</li>
+        <li>The system became faster, more intuitive, and aligned with how staff actually worked</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Modal for image popup -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">
+        <img src="assets/close.svg" alt="Close">
+      </button>
+      <img id="modalImage" class="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <!-- Page Transition Overlay -->
+  <div class="page-transition-overlay"></div>
+  
+  <script src="js/case1.js"></script>
 </body>
 </html>

@@ -1,5 +1,26 @@
-/* ─── GLOBAL NAVIGATION ─────────────────── */
+/* ================================================
+   PERSONAL PORTFOLIO WEBSITE STYLES
+   ================================================
+   
+   Table of Contents:
+   1. CSS Reset & Base Styles
+   2. Global Layout & Typography
+   3. Navigation Bar
+   4. Hero Section
+   5. Clients Section
+   6. Featured Work Section
+   7. UI Shots Section
+   8. Contact Section
+   9. Animations & Transitions
+   10. Responsive Design (Mobile-First)
+   
+   ================================================ */
 
+/* ================================================
+   1. CSS RESET & BASE STYLES
+   ================================================ */
+
+/* Reset default browser styles and set base properties */
 body {
   margin: 0;
   padding: 0;
@@ -8,11 +29,28 @@ body {
   color: #1a1a1a;
 }
 
+/* Make images and videos responsive by default */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================================
+   2. GLOBAL LAYOUT & TYPOGRAPHY
+   ================================================ */
+
+/* Main page wrapper with consistent horizontal padding */
 .page-wrapper {
   padding-left: 16px;
   padding-right: 16px;
 }
 
+/* ================================================
+   3. NAVIGATION BAR
+   ================================================ */
+
+/* Fixed navigation bar positioned at top of viewport */
 .nav-bar {
   position: fixed;
   top: 20px;
@@ -21,14 +59,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 9999;
+  z-index: 9999; /* Ensure nav stays above all other content */
   pointer-events: auto;
 }
 
-
+/* Base styling for all navigation buttons */
 .nav-button {
   background: #D2D2D2;
   border-radius: 24px;
+  /* Multi-layered shadow for depth effect */
   box-shadow:
     0px 9px 21px rgba(0, 0, 0, 0.10),
     0px 38px 38px rgba(0, 0, 0, 0.09),
@@ -43,13 +82,14 @@ body {
   font-weight: 600;
   transition: transform 0.2s ease, background 0.2s ease;
   pointer-events: auto;
-
 }
 
+/* Hover effect for navigation buttons */
 .nav-button:hover {
   transform: scale(1.1);
 }
 
+/* Menu button specific styling */
 .menu-button {
   width: 48px;
   height: 48px;
@@ -58,21 +98,24 @@ body {
   position: relative;
 }
 
+/* Extended clickable area for menu button */
 .menu-button::after {
   content: '';
   position: absolute;
-  right: -72px; /* 120px - 48px = 72px to make total width 120px */
+  right: -72px; /* Creates 120px total clickable width (48px + 72px) */
   top: 0;
   width: 72px;
   height: 48px;
   pointer-events: none;
 }
 
+/* Menu icon sizing */
 .menu-button img {
   width: 20px;
   height: 20px;
 }
 
+/* Resume button specific styling */
 .resume-button {
   padding: 12px 24px;
   font-size: 14px;
@@ -80,9 +123,11 @@ body {
   pointer-events: auto;
 }
 
+/* ================================================
+   4. HERO SECTION
+   ================================================ */
 
-/* ─── HERO SECTION ─────────────────── */
-
+/* Main hero section - full height centered layout */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -91,13 +136,14 @@ body {
   text-align: center;
   padding-top: 32px;
   position: relative;
-  z-index: 1; /* Ensure this sits below nav-bar */
+  z-index: 1; /* Below navigation bar */
   min-height: 100vh;
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
 }
 
+/* Container for hero location and email info */
 .hero-info {
   display: flex;
   flex-direction: column;
@@ -106,6 +152,7 @@ body {
   margin-bottom: 40px;
 }
 
+/* Location text styling */
 .hero-location {
   color: #363636;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -118,6 +165,7 @@ body {
   text-align: center;
 }
 
+/* Email text styling */
 .hero-email {
   color: #C8C8C8;
   font-family: 'Inter', sans-serif;
@@ -130,9 +178,7 @@ body {
   text-align: center;
 }
 
-
-/* ─── HERO TITLE AND SUBTITLE ─────────────────── */
-
+/* Main hero title styling */
 .hero-title {
   width: 681px;
   max-width: 90vw;
@@ -140,13 +186,20 @@ body {
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 100px;
   font-weight: 800;
-  line-height: 80px;
+  line-height: 90px;
   letter-spacing: -2.016px;
   text-transform: uppercase;
   margin: 0 auto 40px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeInTitle 1s ease-out 0.5s forwards;
 }
 
+/* Hero subtitle styling */
 .hero-subtitle {
   color: #949494;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -159,18 +212,25 @@ body {
   margin-bottom: 16px;
   text-align: center;
   max-width: 90vw;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeInTitle 1s ease-out 1.04s forwards;
 }
 
-
-/* ─── HERO CARDS ─────────────────── */
-
+/* Container for hero image cards */
 .hero-cards {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   margin-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Individual hero card styling */
 .hero-card {
   width: 202px;
   height: 202px;
@@ -181,13 +241,14 @@ body {
     0px 38px 38px rgba(0, 0, 0, 0.09),
     0px 85px 51px rgba(0, 0, 0, 0.05),
     0px 151px 60px rgba(0, 0, 0, 0.01);
-  margin-right: -80px;
+  margin-right: -80px; /* Overlapping effect */
   position: relative;
   opacity: 0;
   transform: scale(0.85);
   animation: scaleIn 0.6s ease-out forwards;
 }
 
+/* Hero card image styling */
 .hero-card img {
   width: 100%;
   height: 100%;
@@ -196,25 +257,28 @@ body {
   display: block;
 }
 
-/* Per card rotation + height */
+/* Individual card positioning and rotation */
 .card-1 {
   --rotate: 2deg;
   --translateY: 0px;
   z-index: 1;
   animation-delay: 0s;
 }
+
 .card-2 {
   --rotate: -3deg;
   --translateY: -20px;
   z-index: 2;
   animation-delay: 0.1s;
 }
+
 .card-3 {
   --rotate: 6deg;
   --translateY: 0px;
   z-index: 3;
   animation-delay: 0.2s;
 }
+
 .card-4 {
   --rotate: -2deg;
   --translateY: -18px;
@@ -222,19 +286,11 @@ body {
   animation-delay: 0.3s;
 }
 
-/* Animation */
-@keyframes scaleIn {
-  to {
-    opacity: 1;
-    transform: scale(1) rotate(var(--rotate)) translateY(var(--translateY));
-  }
-}
+/* ================================================
+   5. CLIENTS SECTION
+   ================================================ */
 
-
-
-
-/* ─── CLIENTS SECTION ─────────────────── */
-
+/* Clients section layout */
 .clients-section {
   display: flex;
   flex-direction: column;
@@ -243,6 +299,7 @@ body {
   margin-top: 120px;
 }
 
+/* Clients label styling */
 .clients-label {
   color: #363636;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -254,44 +311,20 @@ body {
   margin-bottom: 0;
 }
 
-/* ─── FEATURED WORK ─────────────────── */
+/* ================================================
+   6. FEATURED WORK SECTION
+   ================================================ */
 
+/* Featured work section layout */
 .featured-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 220px;
-}
-
-.featured-title {
-  color: #363636;
-  text-align: center;
-  font-family: "Schibsted Grotesk", sans-serif;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 64px;
-  letter-spacing: -1.28px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-}
-
-.featured-description {
-  color: #6C6C6C;
-  text-align: center;
-  font-family: "Schibsted Grotesk", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  margin: 0;
-}
-
-.featured-section {
-  margin-top: 220px; /* 220px below clients section */
   text-align: center;
 }
 
+/* Featured work title */
 .featured-title {
   color: #363636;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -303,6 +336,7 @@ body {
   margin: 0;
 }
 
+/* Featured work description */
 .featured-description {
   color: #6C6C6C;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -312,6 +346,7 @@ body {
   margin: 32px auto 48px;
 }
 
+/* Grid layout for featured work cards */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -321,15 +356,22 @@ body {
   width: 100%;
 }
 
-
-
+/* Container for each featured card and its tag */
 .featured-card-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
 }
 
+.featured-card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+/* Featured work card styling */
 .featured-card {
   background-color: #f1f1f1;
   width: 100%;
@@ -340,7 +382,7 @@ body {
   cursor: pointer;
 }
 
-
+/* Featured card image styling with hover effect */
 .featured-card img {
   width: 100%;
   height: 100%;
@@ -353,6 +395,7 @@ body {
   transform: scale(1.03);
 }
 
+/* Tag styling for featured cards */
 .featured-tag {
   padding: 10px 20px;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -370,59 +413,23 @@ body {
 .featured-tag:hover {
   transform: scale(1.1);
   box-shadow: 
-  0px 9px 21px rgba(0, 0, 0, 0.10),
-  0px 38px 38px rgba(0, 0, 0, 0.09),
-  0px 85px 51px rgba(0, 0, 0, 0.05),
-  0px 151px 60px rgba(0, 0, 0, 0.01);
-;
+    0px 9px 21px rgba(0, 0, 0, 0.10),
+    0px 38px 38px rgba(0, 0, 0, 0.09),
+    0px 85px 51px rgba(0, 0, 0, 0.05),
+    0px 151px 60px rgba(0, 0, 0, 0.01);
 }
 
+/* ================================================
+   7. UI SHOTS SECTION
+   ================================================ */
 
-
-/* ─── FEATURED WORK CARDS MODAL ─────────────────── */
-.project-modal-overlay[hidden] {
-  display: none !important;
-}
-
-.project-modal-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.modal-iframe {
-  width: 90%;
-  height: 90%;
-  border: none;
-  border-radius: 12px;
-  background: white;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-  z-index: 10000;
-}
-
-
-/* ─── UI SHOTS  ─────────────────── */
-
+/* UI shots section layout */
 .ui-shots-section {
   margin-top: 100px;
   text-align: center;
 }
 
+/* UI shots section title */
 .ui-shots-title {
   font-size: 48px;
   font-weight: 600;
@@ -433,6 +440,7 @@ body {
   font-family: 'Schibsted Grotesk', sans-serif;
 }
 
+/* Grid layout for UI shots */
 .ui-shots-grid {
   display: grid;
   grid-template-columns: repeat(3, 416px);
@@ -440,8 +448,7 @@ body {
   justify-content: center;
 }
 
-
-
+/* Container for UI card and its tag */
 .ui-card-wrapper {
   display: flex;
   flex-direction: column;
@@ -449,6 +456,7 @@ body {
   gap: 16px;
 }
 
+/* Individual UI shot card */
 .ui-card {
   width: 416px;
   height: 249px;
@@ -462,15 +470,17 @@ body {
   flex-shrink: 0;
 }
 
+/* UI card media styling */
 .ui-card img,
 .ui-card video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* can use contain for specific cases */
+  object-fit: cover;
   border-radius: inherit;
   display: block;
 }
 
+/* Special styling for oversized videos */
 .ui-card video.too-big {
   object-fit: contain;
   width: 180px;
@@ -479,7 +489,7 @@ body {
   background: #f1f1f1;
 }
 
-
+/* UI card tag styling */
 .ui-tag {
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 14px;
@@ -490,6 +500,7 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Video frame container for mobile videos */
 .video-frame {
   width: 180px;
   height: 238px;
@@ -508,9 +519,11 @@ body {
   border-radius: inherit;
 }
 
-/* ─── Reach out ──────────────────────────── */
+/* ================================================
+   8. CONTACT SECTION
+   ================================================ */
 
-
+/* Contact section layout and typography */
 .contact-section {
   font-size: 64px;
   font-family: 'Schibsted Grotesk', sans-serif;
@@ -522,6 +535,7 @@ body {
   align-items: center;
 }
 
+/* Contact links container */
 .contact-section .contacts {
   margin-top: 20px;
   display: flex;
@@ -530,6 +544,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Contact link styling */
 .contact-section a {
   color: #363636;
   font-size: 14px;
@@ -540,6 +555,7 @@ body {
   gap: 6px;
 }
 
+/* Contact icon styling */
 .contact-section i {
   font-size: 16px;
   color: #333;
@@ -548,33 +564,95 @@ body {
   text-transform: uppercase;
 }
 
+/* ================================================
+   9. ANIMATIONS & TRANSITIONS
+   ================================================ */
 
+/* Scale-in animation for hero cards */
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rotate)) translateY(var(--translateY));
+  }
+}
 
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+@keyframes fadeInUpDesktop {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes scaleInDesktop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
+@keyframes fadeInUpText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* ─── RESPONSIVE ************************************************************************************************************************ ──────────────────────────── */
+/* GSAP handles all animations - no CSS animations needed */
 
+/* ================================================
+   10. RESPONSIVE DESIGN (Mobile-First)
+   ================================================ */
+
+/* Large Desktop and Tablet Landscape (max-width: 1200px) */
 @media (max-width: 1200px) {
+  /* Adjust hero typography for smaller screens */
   .hero-title, .hero-subtitle {
     width: 90vw;
     font-size: 64px;
     line-height: 1.1;
   }
+  
+  /* Scale down featured section title */
   .featured-title {
     font-size: 48px;
     line-height: 1.1;
   }
+  
+  /* Maintain 2-column grid with reduced spacing */
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     width: 100%;
   }
+  
+  /* Reduce featured card height */
   .featured-card {
     height: 280px;
     width: 100%;
   }
+  
+  /* Convert UI shots to horizontal scroll */
   .ui-shots-grid {
     display: flex;
     gap: 32px;
@@ -586,24 +664,31 @@ body {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+  
   .ui-shots-grid::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Adjust UI card sizing for scroll */
   .ui-card-wrapper {
     flex-shrink: 0;
     scroll-snap-align: start;
     width: 320px;
   }
+  
   .ui-card {
     width: 320px;
     height: 192px;
   }
+  
+  /* Adjust hero cards layout */
   .hero-cards {
     flex-direction: row !important;
     justify-content: center;
     align-items: flex-end;
     gap: 0;
   }
+  
   .hero-card {
     width: 200px;
     height: 200px;
@@ -612,7 +697,9 @@ body {
   }
 }
 
+/* Tablet and Large Mobile (max-width: 992px, 768px, 480px) */
 @media (max-width: 992px), (max-width: 768px), (max-width: 480px) {
+  /* Adjust navigation for smaller screens */
   .nav-bar {
     flex-direction: row !important;
     gap: 8px;
@@ -621,147 +708,257 @@ body {
     right: 12px;
     padding: 0 2px;
   }
+  
+  /* Reduce button sizes */
   .nav-button, .resume-button {
     font-size: 12px;
     padding: 12px 12px;
   }
+  
   .menu-button {
     padding: 0px 0px;
     border-radius: 99px;
   }
+  
+  /* Further reduce hero typography */
   .hero-title, .hero-subtitle {
-    font-size: 48px;
+    font-size: 32px;
     width: 98vw;
     line-height: 1.1;
+    white-space: normal;
+    overflow: visible;
   }
+  
+  .hero-subtitle {
+    font-size: 36px;
+    line-height: 44px;
+    white-space: normal;
+    overflow: visible;
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out 1.04s forwards;
+  }
+  
+  /* Adjust hero cards for tablet */
   .hero-cards {
     flex-direction: row !important;
     justify-content: center;
     align-items: flex-end;
     gap: 0;
   }
+  
   .hero-card {
     width: 160px;
     height: 160px;
     margin-right: -40px;
     border-radius: 18px;
   }
+  
+  /* Reduce featured section spacing */
   .featured-section {
     margin-top: 120px;
   }
+  
   .featured-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     width: 100%;
   }
+  
   .featured-card {
     height: 220px;
   }
+  
+  /* Scale down UI shots title */
   .ui-shots-title {
-    font-size: 32px;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 500;
   }
+  
+  /* Reduce contact section size */
   .contact-section {
     font-size: 32px;
     margin-top: 80px;
     margin-bottom: 100px;
   }
-
-  .ui-shots-title{
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: 500;
-  }
-
 }
 
+/* Mobile Portrait (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Reduce page wrapper padding */
   .page-wrapper {
     padding-left: 4px;
     padding-right: 4px;
   }
+  
+  /* Mobile hero typography */
   .hero-title, .hero-subtitle {
     font-size: 32px;
     width: 98vw;
     line-height: 1.1;
+    white-space: normal;
+    overflow: visible;
   }
+  
+  .hero-subtitle {
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out 1.04s forwards;
+  }
+  
   .hero-section {
     padding-top: 16px;
   }
-  .hero-cards {
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 0;
-  }
+  
+  /* Smaller hero cards for mobile */
   .hero-card {
     width: 120px;
     height: 120px;
     margin-right: -25px;
     border-radius: 14px;
   }
+  
+  /* Mobile featured section adjustments */
   .featured-title {
     font-size: 28px;
     line-height: 1.1;
   }
+  
   .featured-description {
     font-size: 14px;
     margin: 16px auto 24px;
   }
+  
+  /* Single column grid for mobile */
   .featured-grid {
     grid-template-columns: 1fr;
     gap: 20px;
     width: 100%;
   }
+  
   .featured-card {
     height: 190px;
     border-radius: 16px;
     width: calc(100% - 32px);
     margin: 0 16px;
   }
+  
+  /* Mobile UI shots adjustments */
   .ui-shots-title {
-    font-size: 20px;
-    margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 500;
+    margin-bottom: 24px;
   }
+  
   .ui-shots-grid {
     gap: 16px;
     padding: 0 8px;
   }
+  
   .ui-card {
     width: 240px;
     height: 144px;
     border-radius: 8px;
     flex-shrink: 0;
   }
+  
   .ui-card-wrapper {
     width: 240px;
     flex-shrink: 0;
   }
+  
+  /* Mobile contact section */
   .contact-section {
     font-size: 20px;
     margin-top: 40px;
     margin-bottom: 60px;
   }
-  .contact-section .contacts {
-    gap: 12px;
-  }
-
-  .ui-shots-title{
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: 500;
-  }
-
   
+  .contact-section .contacts {
+    gap: 6px;
+  }
+  
+  /* Featured cards animations - matching desktop */
+  .featured-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpDesktop 0.64s ease-out forwards;
+  }
+  
+  .featured-card-wrapper:nth-child(1) .featured-card { animation-delay: 0s; }
+  .featured-card-wrapper:nth-child(2) .featured-card { animation-delay: 0.12s; }
+  .featured-card-wrapper:nth-child(3) .featured-card { animation-delay: 0.24s; }
+  .featured-card-wrapper:nth-child(4) .featured-card { animation-delay: 0.36s; }
+  
+  /* UI cards animations - matching desktop */
+  .ui-card {
+    opacity: 0;
+    transform: scale(0.96);
+    animation: scaleInDesktop 0.64s ease-out forwards;
+  }
+  
+  .ui-card-wrapper:nth-child(1) .ui-card { animation-delay: 0s; }
+  .ui-card-wrapper:nth-child(2) .ui-card { animation-delay: 0.08s; }
+  .ui-card-wrapper:nth-child(3) .ui-card { animation-delay: 0.16s; }
+  .ui-card-wrapper:nth-child(4) .ui-card { animation-delay: 0.24s; }
+  .ui-card-wrapper:nth-child(5) .ui-card { animation-delay: 0.32s; }
+  .ui-card-wrapper:nth-child(6) .ui-card { animation-delay: 0.40s; }
+  
+  /* Text animations - matching desktop */
+  .featured-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0s forwards;
+  }
+  
+  .featured-description {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.06s forwards;
+  }
+  
+  .ui-shots-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.12s forwards;
+  }
+  
+  .contact-section h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.18s forwards;
+  }
+  
+  .clients-label {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.24s forwards;
+  }
+  
+  /* Contact links animations - matching desktop */
+  .contact-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out forwards;
+  }
+  
+  .contact-link:nth-child(1) { animation-delay: 0s; }
+  .contact-link:nth-child(2) { animation-delay: 0.08s; }
+  .contact-link:nth-child(3) { animation-delay: 0.16s; }
+
 }
 
+/* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
-
-  .hero-email{
+  /* Fix hero email typography */
+  .hero-email {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     line-height: 16px;
-    font-weight: 400px;
+    font-weight: 400;
   }
+  
+  /* Stack navigation vertically on very small screens */
   .nav-bar {
     flex-direction: column;
     gap: 4px;
@@ -770,129 +967,196 @@ body {
     right: 12px;
     padding: 0 2px;
   }
-  .nav-button, .resume-button {
-    font-size: 12px;
-    padding: 12px 16px;
-  }
-  .menu-button {
-    padding: 0px 0px;
-    border-radius: 99px;
-  }
+  
+  /* Optimize hero for small mobile */
   .hero-title {
     font-size: 50px;
     line-height: 80px;
     width: 98vw;
     margin-bottom: 16px;
     margin-top: 8px;
+    white-space: normal;
+    overflow: visible;
   }
-
+  
   .hero-subtitle {
     font-size: 36px;
     line-height: 44px;
+    white-space: normal;
+    overflow: visible;
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out 1.04s forwards;
   }
+  
   .hero-section {
-    padding-top: 20px; /* Increased to move hero info below nav */
+    padding-top: 20px;
   }
+  
   .hero-info {
     gap: 4px;
     margin-bottom: 16px;
   }
-  .hero-cards {
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 0;
-  }
+  
+  /* Smallest hero cards */
   .hero-card {
     width: 100px;
     height: 100px;
     margin-right: -15px;
     border-radius: 10px;
   }
-
-  .hero-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  
+  /* Adjust section spacing for small mobile */
   .clients-section {
     margin-top: 40px;
   }
+  
   .featured-section {
     margin-top: 60px;
   }
+  
   .featured-title {
     font-size: 40px;
     line-height: 48px;
   }
+  
   .featured-description {
     font-size: 12px;
     margin: 8px auto 12px;
   }
+  
   .featured-grid {
-    grid-template-columns: 1fr;
     gap: 16px;
-    width: 100%;
   }
+  
   .featured-card {
     height: 268px;
     border-radius: 8px;
     width: calc(100% - 32px);
     margin: 0 16px;
   }
+  
   .featured-tag {
     font-size: 12px;
     padding: 6px 12px;
   }
-  .ui-shots-title {
-    font-size: 12px;
-    margin-bottom: 16px;
-  }
-  .ui-shots-grid {
-    gap: 8px;
-    padding: 0 4px;
-  }
+  
+  /* Smallest UI cards */
   .ui-card {
-    width: 180px;
-    height: 108px;
-    border-radius: 4px;
+    width: 343px;
+    height: 205px;
+    border-radius: 10px;
     flex-shrink: 0;
   }
+  
   .ui-card-wrapper {
-    width: 180px;
+    width: 343px;
     flex-shrink: 0;
   }
+  
+  .ui-shots-title {
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 500;
+  }
+  
+  /* Small mobile contact section */
   .contact-section {
     font-size: 12px;
     margin-top: 20px;
     margin-bottom: 30px;
   }
+  
   .contact-section .contacts {
     gap: 6px;
   }
-
-  .ui-shots-title{
-    font-size: 40px;
-    line-height: 48px;
-    font-weight: 500;
+  
+  /* Featured cards animations - matching desktop */
+  .featured-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpDesktop 0.64s ease-out forwards;
   }
+  
+  .featured-card-wrapper:nth-child(1) .featured-card { animation-delay: 0s; }
+  .featured-card-wrapper:nth-child(2) .featured-card { animation-delay: 0.12s; }
+  .featured-card-wrapper:nth-child(3) .featured-card { animation-delay: 0.24s; }
+  .featured-card-wrapper:nth-child(4) .featured-card { animation-delay: 0.36s; }
+  
+  /* UI cards animations - matching desktop */
+  .ui-card {
+    opacity: 0;
+    transform: scale(0.96);
+    animation: scaleInDesktop 0.64s ease-out forwards;
+  }
+  
+  .ui-card-wrapper:nth-child(1) .ui-card { animation-delay: 0s; }
+  .ui-card-wrapper:nth-child(2) .ui-card { animation-delay: 0.08s; }
+  .ui-card-wrapper:nth-child(3) .ui-card { animation-delay: 0.16s; }
+  .ui-card-wrapper:nth-child(4) .ui-card { animation-delay: 0.24s; }
+  .ui-card-wrapper:nth-child(5) .ui-card { animation-delay: 0.32s; }
+  .ui-card-wrapper:nth-child(6) .ui-card { animation-delay: 0.40s; }
+  
+  /* Text animations - matching desktop */
+  .featured-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0s forwards;
+  }
+  
+  .featured-description {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.06s forwards;
+  }
+  
+  .ui-shots-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.12s forwards;
+  }
+  
+  .contact-section h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.18s forwards;
+  }
+  
+  .clients-label {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.24s forwards;
+  }
+  
+  /* Contact links animations - matching desktop */
+  .contact-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out forwards;
+  }
+  
+  .contact-link:nth-child(1) { animation-delay: 0s; }
+  .contact-link:nth-child(2) { animation-delay: 0.08s; }
+  .contact-link:nth-child(3) { animation-delay: 0.16s; }
+
 }
 
-@media (max-width: 380px) {
+/* Extra Small Mobile (max-width: 380px) */
+@media (max-width: 400px) {
+  /* Final adjustments for very small screens */
   .featured-card {
     height: 224px;
     border-radius: 6px;
     width: calc(100% - 24px);
     margin: 0 12px;
   }
-
+  
   .featured-title {
     font-size: 40px;
     line-height: 48px;
     font-weight: 500;
   }
-
-  .featured-description{
+  
+  .featured-description {
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -904,35 +1168,135 @@ body {
     object-fit: cover;
     object-position: center;
   }
+  
   .featured-tag {
     font-size: 11px;
     padding: 6px 12px;
   }
-
+  
+  /* Larger UI cards for better usability on tiny screens */
   .ui-card {
     width: 343px;
     height: 205px;
     border-radius: 10px;
     flex-shrink: 0;
   }
+  
   .ui-card-wrapper {
     width: 343px;
     flex-shrink: 0;
+    gap: 16px;
+    padding-left: 20px;
   }
-
-  .ui-shots-title{
+  
+  .ui-shots-title {
     font-size: 40px;
     line-height: 48px;
     font-weight: 500;
   }
-
+  
+  /* Featured cards animations - matching desktop */
+  .featured-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUpDesktop 0.64s ease-out forwards;
   }
-
-
-/* Make images and videos responsive */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  
+  .featured-card-wrapper:nth-child(1) .featured-card { animation-delay: 0s; }
+  .featured-card-wrapper:nth-child(2) .featured-card { animation-delay: 0.12s; }
+  .featured-card-wrapper:nth-child(3) .featured-card { animation-delay: 0.24s; }
+  .featured-card-wrapper:nth-child(4) .featured-card { animation-delay: 0.36s; }
+  
+  /* UI cards animations - matching desktop */
+  .ui-card {
+    opacity: 0;
+    transform: scale(0.96);
+    animation: scaleInDesktop 0.64s ease-out forwards;
+  }
+  
+  .ui-card-wrapper:nth-child(1) .ui-card { animation-delay: 0s; }
+  .ui-card-wrapper:nth-child(2) .ui-card { animation-delay: 0.08s; }
+  .ui-card-wrapper:nth-child(3) .ui-card { animation-delay: 0.16s; }
+  .ui-card-wrapper:nth-child(4) .ui-card { animation-delay: 0.24s; }
+  .ui-card-wrapper:nth-child(5) .ui-card { animation-delay: 0.32s; }
+  .ui-card-wrapper:nth-child(6) .ui-card { animation-delay: 0.40s; }
+  
+  /* Hero subtitle animation */
+  .hero-subtitle {
+    opacity: 0;
+    animation: fadeInTitle 1s ease-out 1.04s forwards;
+  }
+  
+  /* Text animations - matching desktop */
+  .featured-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0s forwards;
+  }
+  
+  .featured-description {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.06s forwards;
+  }
+  
+  .ui-shots-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.12s forwards;
+  }
+  
+  .contact-section h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.18s forwards;
+  }
+  
+  .clients-label {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out 0.24s forwards;
+  }
+  
+  /* Contact links animations - matching desktop */
+  .contact-link {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpText 0.48s ease-out forwards;
+  }
+  
+  .contact-link:nth-child(1) { animation-delay: 0s; }
+  .contact-link:nth-child(2) { animation-delay: 0.08s; }
+  .contact-link:nth-child(3) { animation-delay: 0.16s; }
+  
 }
 
+/* Text Selection Color */
+::selection {
+  background-color: #EDEDED;
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: #EDEDED;
+  color: inherit;
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-color);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
