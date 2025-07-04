@@ -419,18 +419,6 @@ img, video {
     0px 151px 60px rgba(0, 0, 0, 0.01);
 }
 
-/* Coming soon text styling */
-.coming-soon {
-  color: rgba(161, 161, 161, 0.80);
-  font-family: "Schibsted Grotesk", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
-  margin-top: 8px;
-}
-
 /* ================================================
    7. UI SHOTS SECTION
    ================================================ */
