@@ -213,10 +213,10 @@
 .animate-delay-3 { animation-delay: 0.4s; }
 
 /* ─── RESPONSIVE ───────────────────────────────── */
-@media (max-width: 376px) {
+@media (max-width: 420px) {
   .page-wrapper {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
     padding-top: 100px;
   }
 
@@ -237,8 +237,8 @@
   }
 
   .paragraph-block p {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 36px;
     letter-spacing: -0.4px;
   }
 
