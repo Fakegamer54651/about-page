@@ -419,6 +419,18 @@ img, video {
     0px 151px 60px rgba(0, 0, 0, 0.01);
 }
 
+/* Coming soon text styling */
+.coming-soon {
+  color: rgba(161, 161, 161, 0.80);
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
 /* ================================================
    7. UI SHOTS SECTION
    ================================================ */
@@ -436,8 +448,18 @@ img, video {
   letter-spacing: -1.28px;
   text-transform: uppercase;
   color: #363636;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
   font-family: 'Schibsted Grotesk', sans-serif;
+}
+
+/* UI shots description */
+.ui-shots-description {
+  color: #6C6C6C;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 auto 48px;
 }
 
 /* Grid layout for UI shots */
@@ -523,36 +545,49 @@ img, video {
    8. CONTACT SECTION
    ================================================ */
 
-/* Contact section layout and typography */
-.contact-section {
-  font-size: 64px;
-  font-family: 'Schibsted Grotesk', sans-serif;
+/* Contact section layout */
+  .contact-section {
+    margin-top: 150px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+/* Contact section title */
+.contact-section h2 {
   color: #363636;
-  margin-top: 150px;
-  margin-bottom: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  margin: 0 0 32px 0;
 }
 
 /* Contact links container */
 .contact-section .contacts {
   margin-top: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-/* Contact link styling */
+/* Contact link styling with touchzone */
 .contact-section a {
   color: #363636;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   display: flex;
+  height: 48px;
+  justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 /* Contact icon styling */
@@ -694,6 +729,12 @@ img, video {
     height: 200px;
     margin-right: -60px;
     border-radius: 24px;
+  }
+  
+  /* Keep contacts horizontal on larger screens */
+  .contact-section .contacts {
+    flex-direction: row;
+    gap: 30px;
   }
 }
 
@@ -875,7 +916,8 @@ img, video {
   }
   
   .contact-section .contacts {
-    gap: 6px;
+    flex-direction: column;
+    gap: 16px;
   }
   
   /* Featured cards animations - matching desktop */
@@ -1062,12 +1104,13 @@ img, video {
   /* Small mobile contact section */
   .contact-section {
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 120px;
     margin-bottom: 30px;
   }
   
   .contact-section .contacts {
-    gap: 6px;
+    flex-direction: column;
+    gap: 16px;
   }
   
   /* Featured cards animations - matching desktop */
@@ -1193,6 +1236,11 @@ img, video {
     font-size: 40px;
     line-height: 48px;
     font-weight: 500;
+  }
+  
+  /* Contact section with additional mobile spacing */
+  .contact-section {
+    margin-top: 250px;
   }
   
   /* Featured cards animations - matching desktop */
