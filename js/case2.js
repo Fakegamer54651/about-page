@@ -1,4 +1,4 @@
-// Toyota Case Study - Image Modal Functionality & GSAP Scroll Animations
+// Breadly Case Study - Image Modal Functionality & GSAP Scroll Animations
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   
-  // Get all clickable images
-  const images = document.querySelectorAll('.hero-image-top img, .hero-image-bottom img, .section-image img, .section-images-grid img, .interactions-grid img');
+  // Get all clickable images - updated selectors for case2
+  const images = document.querySelectorAll('.hero-image-vertical img, .hero-image-horizontal img, .process-image-vertical img, .process-image-horizontal img, .section-image img');
   
-  // Add click event listener to each image (excluding the Toyota company image)
+  // Add click event listener to each image (excluding the 4th image - casetwofrom4.webp)
   images.forEach(function(img) {
     img.addEventListener('click', function() {
-      // Don't open modal for the Toyota company image (4.webp)
-      if (this.src.includes('4.webp')) {
+      // Don't open modal for the 4th image (casetwofrom4.webp)
+      if (this.src.includes('casetwofrom4.webp')) {
         return;
       }
       openModal(this.src, this.alt);
@@ -80,8 +80,8 @@ function closeModal() {
 
 // GSAP Scroll animations initialization - Optimized for performance
 function initGSAPScrollAnimations() {
-  // Set initial states for all images
-  gsap.set('.hero-image-top img, .hero-image-bottom img, .section-image img', { 
+  // Set initial states for all images - updated selectors for case2
+  gsap.set('.hero-image-vertical img, .hero-image-horizontal img, .process-image-vertical img, .process-image-horizontal img, .section-image img', { 
     scale: 0.96, 
     opacity: 0 
   });
@@ -113,8 +113,8 @@ function initGSAPScrollAnimations() {
         delay: 0.1
       });
       
-      // Animate hero images
-      gsap.to('.hero-image-top img, .hero-image-bottom img', {
+      // Animate hero images - updated selectors for case2
+      gsap.to('.hero-image-vertical img, .hero-image-horizontal img', {
         scale: 1,
         opacity: 1,
         duration: 0.4,
@@ -133,8 +133,8 @@ function initGSAPScrollAnimations() {
       trigger: section,
       start: 'top 85%',
       onEnter: () => {
-        // Animate section images
-        const sectionImages = section.querySelectorAll('.section-image img, .section-images-grid img, .interactions-grid img');
+        // Animate section images - updated selectors for case2
+        const sectionImages = section.querySelectorAll('.section-image img, .process-image-vertical img, .process-image-horizontal img');
         if (sectionImages.length > 0) {
           gsap.to(sectionImages, {
             scale: 1,
@@ -181,8 +181,8 @@ function initPageTransitions() {
         const overlay = document.querySelector('.page-transition-overlay');
         overlay.classList.add('active');
         
-        // Fade out individual elements
-        const elementsToFade = document.querySelectorAll('.case-hero, .case-section, .nav-bar, .case-title, .case-description, .hero-images, .section-image, .section-images-grid, .interactions-grid');
+        // Fade out individual elements - updated selectors for case2
+        const elementsToFade = document.querySelectorAll('.case-hero, .case-section, .nav-bar, .case-title, .case-description, .hero-images, .section-image, .process-images');
         
         gsap.to(elementsToFade, {
           opacity: 0,

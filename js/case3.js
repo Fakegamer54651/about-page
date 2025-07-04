@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Close modal when clicking outside the image
   modal.addEventListener('click', function(e) {
-    if (e.target === modal || e.target.classList.contains('modal-content')) {
+    if (e.target === modal) {
       closeModal();
     }
   });
@@ -46,9 +46,6 @@ function openModal(imageSrc, imageAlt) {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   
-  // Calculate scrollbar width to prevent page shifting
-  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-  
   modalImage.src = imageSrc;
   modalImage.alt = imageAlt;
   modal.style.display = 'block';
@@ -58,9 +55,8 @@ function openModal(imageSrc, imageAlt) {
     modal.classList.add('show');
   }, 10);
   
-  // Prevent body scroll and page shifting
+  // Prevent body scroll when modal is open
   document.body.style.overflow = 'hidden';
-  document.body.style.paddingRight = scrollbarWidth + 'px';
 }
 
 // Function to close modal with animation
@@ -72,9 +68,8 @@ function closeModal() {
   // Hide modal after animation completes
   setTimeout(() => {
     modal.style.display = 'none';
-    // Restore body scroll and remove padding
+    // Restore body scroll
     document.body.style.overflow = 'auto';
-    document.body.style.paddingRight = '0px';
   }, 300);
 }
 

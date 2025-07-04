@@ -1,0 +1,161 @@
+<!-- case2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breadly - Food Ordering Platform</title>
+  <link rel="stylesheet" href="css/case2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="assets/faviconbreadly.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <a href="index.html" class="nav-button back-button">
+      <img src="assets/close.svg" alt="Back to Home" />
+    </a>
+  </nav>
+
+  <!-- Main Case Study Container -->
+  <main class="case-container">
+    
+    <!-- Hero Section -->
+    <section class="case-hero">
+      <h1 class="case-title">Breadly</h1>
+      <p class="case-description">
+        An elegant food ordering platform designed with simplicity and user-centricity in mind.
+      </p>
+      
+      <!-- Hero Images Grid -->
+      <div class="hero-images">
+        <div class="hero-image-vertical">
+          <img src="assets/casetwofrom1.webp" alt="Breadly Food Ordering Platform Hero Image 1">
+        </div>
+        <div class="hero-image-horizontal">
+          <img src="assets/casetwofrom2.webp" alt="Breadly Food Ordering Platform Hero Image 2">
+        </div>
+        <div class="hero-image-horizontal">
+          <img src="assets/casetwofrom3.webp" alt="Breadly Food Ordering Platform Hero Image 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- What Company Section -->
+    <section class="case-section what-company-section">
+      <h2 class="section-title">What company?</h2>
+      <p class="section-text">
+        Breadly is an artisan bakery founded in 2017. The brand brings together culinary traditions and 
+        flavors from around the world, working with classic recipes adapted for modern techniques — while 
+        preserving authenticity and quality.
+      </p>
+      
+      <div class="section-image">
+        <img src="assets/casetwofrom4.webp" alt="Breadly Company Image">
+      </div>
+    </section>
+
+    <!-- Context Section -->
+    <section class="case-section context-section">
+      <h2 class="section-title">Context</h2>
+      <p class="section-text">
+        The project started from scratch — Breadly didn't have a website before. I designed and built the 
+        full experience from zero: structure, layout, responsive design, and visual direction. The goal was 
+        to reflect their artisan identity through a clean, modern interface that supports both branding and usability.
+      </p>
+    </section>
+
+    <!-- What Was Done Section -->
+    <section class="case-section what-was-done-section">
+      <h2 class="section-title">What Was Done</h2>
+      <p class="section-text">
+        The development process focused on creating a comprehensive digital experience that would properly 
+        represent Breadly's artisan quality and streamline the ordering process for their customers.
+      </p>
+      
+      <div class="section-image">
+        <img src="assets/casetwofrom5.webp" alt="Breadly What Was Done Image">
+      </div>
+    </section>
+
+    <!-- First 3-Image Grid Section -->
+    <section class="case-section first-grid-section">
+      <div class="process-images">
+        <div class="process-image-vertical">
+          <img src="assets/casetwofrom6.webp" alt="Breadly Process Image 1">
+        </div>
+        <div class="process-image-horizontal">
+          <img src="assets/casetwofrom7.webp" alt="Breadly Process Image 2">
+        </div>
+        <div class="process-image-horizontal">
+          <img src="assets/casetwofrom8.webp" alt="Breadly Process Image 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Second 3-Image Grid Section -->
+    <section class="case-section second-grid-section">
+      <div class="process-images">
+        <div class="process-image-vertical">
+          <img src="assets/casetwofrom9.webp" alt="Breadly Features Image 1">
+        </div>
+        <div class="process-image-horizontal">
+          <img src="assets/casetwofrom10.webp" alt="Breadly Features Image 2">
+        </div>
+        <div class="process-image-horizontal">
+          <img src="assets/casetwofrom11.webp" alt="Breadly Features Image 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Single Image Section -->
+    <section class="case-section final-image-section">
+      <div class="section-image">
+        <img src="assets/casetwofrom12.webp" alt="Breadly Final Design">
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="case-section results-section">
+      <h2 class="section-title">Results</h2>
+      <p class="section-text">
+        Breadly was designed from the ground up with a clear focus on simplicity, clarity, and ease of use. 
+        The final product delivers:
+      </p>
+      
+      <ul class="results-list">
+        <li>A fully responsive interface that works smoothly across devices</li>
+        <li>Straightforward ordering flows that minimize friction for users</li>
+        <li>A visually clean, modern UI tailored for intuitive decision-making</li>
+        <li>While metrics are not yet available, the project established a solid, user-focused foundation for the brand's digital presence and future growth</li>
+      </ul>
+    </section>
+
+    <!-- Website Link -->
+    <section class="case-section website-link-section">
+      <p class="website-link">
+        <a href="https://breadly.uz/en" target="_blank" rel="noopener noreferrer">breadly.uz</a>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Modal for image popup -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <img id="modalImage" class="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <!-- Page Transition Overlay -->
+  <div class="page-transition-overlay"></div>
+  
+  <script src="js/case2.js"></script>
+</body>
+</html>

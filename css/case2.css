@@ -1,5 +1,5 @@
 /* ================================================
-   TOYOTA CASE STUDY STYLES
+   BREADLY CASE STUDY STYLES
    ================================================
    
    Table of Contents:
@@ -142,7 +142,7 @@ html {
   font-family: 'Schibsted Grotesk', sans-serif;
   font-size: 1.5rem; /* 24px */
   font-weight: 700;
-  line-height: 2.5rem;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: #444444;
   margin-bottom: 1.5rem;
@@ -156,7 +156,7 @@ html {
   font-weight: 400;
   line-height: 32px;
   color: #5f5f5f;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   max-width: 50rem;
 }
 
@@ -166,27 +166,38 @@ html {
 
 /* Hero section layout */
 .case-hero {
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem; /* 40px */
   text-align: center;
 }
 
-/* Hero images grid layout */
+/* Hero images grid layout - 1 image on top, then 2 horizontal below */
 .hero-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 1.5rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
-/* Top hero images side by side */
-.hero-image-top {
+/* First hero image spans full width on top */
+.hero-image-vertical {
+  grid-column: 1 / -1;
+  grid-row: 1;
   width: 100%;
 }
 
-/* Bottom hero image spans full width */
-.hero-image-bottom {
-  grid-column: 1 / -1;
+/* Second horizontal hero image - bottom left */
+.hero-image-horizontal:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+
+/* Third horizontal hero image - bottom right */
+.hero-image-horizontal:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
   width: 100%;
 }
 
@@ -196,62 +207,125 @@ html {
 
 /* Individual case study sections */
 .case-section {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
   text-align: left;
 }
 
-/* Section images vertical layout */
+/* What company section - consistent with other sections */
+.what-company-section {
+  margin-bottom: 6.25rem; /* 100px to context */
+}
+
+/* Context section - 100px from what company */
+.context-section {
+  margin-bottom: 6.25rem; /* 100px to what was done */
+}
+
+/* What was done section - image 36px from title */
+.what-was-done-section .section-image {
+  margin-top: 2.25rem; /* 36px from title */
+  margin-bottom: 5rem; /* 80px to first grid */
+}
+
+/* First 3-image grid - 80px from previous image */
+.first-grid-section {
+  margin-bottom: 6.25rem; /* 100px to second grid */
+}
+
+/* Second 3-image grid - 100px from first grid, 80px between internally */
+.second-grid-section {
+  margin-bottom: 5rem; /* 80px to final image */
+}
+
+/* Final image section - 80px from second grid */
+.final-image-section {
+  margin-bottom: 4rem;
+}
+
+/* Section images grid layout */
 .section-images-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Single section image - no fixed height to maintain aspect ratio */
+/* Individual section images */
 .section-image {
-  margin-top: 2rem;
   width: 100%;
+  margin-bottom: 3rem;
 }
 
-/* Interactions vertical layout */
-.interactions-grid {
-  display: flex;
-  flex-direction: column;
+/* Process images layout - 1 image on top, then 2 horizontal below */
+.process-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.interactions-grid .section-image {
-  margin-top: 0;
+/* First process image spans full width on top */
+.process-image-vertical {
+  grid-column: 1 / -1;
+  grid-row: 1;
   width: 100%;
 }
 
-/* ================================================
-   7. IMAGE PLACEHOLDERS & GRIDS
-   ================================================ */
+/* Second process horizontal image - bottom left */
+.process-image-horizontal:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
 
-/* Image styling for all case study images */
-.hero-image-top img,
-.hero-image-bottom img,
-.section-image img,
-.interactions-grid .section-image img {
+/* Third process horizontal image - bottom right */
+.process-image-horizontal:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+}
+
+/* Features grid layout - 2 images side by side */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Image styling for all grids */
+.hero-image-vertical img,
+.hero-image-horizontal img,
+.process-image-vertical img,
+.process-image-horizontal img,
+.section-image img {
   width: 100%;
   height: auto;
   border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-image-top img:hover,
-.hero-image-bottom img:hover,
-.section-image img:hover,
-.interactions-grid .section-image img:hover {
+/* Hover effects for images */
+.hero-image-vertical img:hover,
+.hero-image-horizontal img:hover,
+.process-image-vertical img:hover,
+.process-image-horizontal img:hover,
+.section-image img:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
 }
 
-/* Modal styling */
+/* ================================================
+   7. MODAL STYLES
+   ================================================ */
+
+/* Modal overlay */
 .modal {
   display: none;
   position: fixed;
@@ -266,10 +340,12 @@ html {
   transition: opacity 0.3s ease;
 }
 
+/* Show modal */
 .modal.show {
   opacity: 1;
 }
 
+/* Modal content */
 .modal-content {
   position: absolute;
   top: 0;
@@ -285,10 +361,12 @@ html {
   box-sizing: border-box;
 }
 
+/* Show modal content */
 .modal.show .modal-content {
   transform: scale(1);
 }
 
+/* Modal image */
 .modal-image {
   max-width: 100%;
   max-height: 100%;
@@ -301,60 +379,35 @@ html {
 
 
 
-/* Image placeholder styling (fallback) */
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border: 2px dashed #d0d0d0;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-.image-placeholder:hover {
-  border-color: #bbb;
-  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-  transform: translateY(-2px);
-}
-
 /* ================================================
    8. RESULTS SECTION
    ================================================ */
 
-/* Results section - same styling as other sections */
+/* Results section specific styling */
 .results-section {
-  /* No special background or box styling */
+  padding-top: 3rem;
 }
 
 /* Results list styling */
 .results-list {
   list-style: none;
-  margin-top: 2rem;
+  margin-left: 0;
 }
 
 .results-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.8;
-  color: #2a2a2a;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-  position: relative;
+  color: #5f5f5f;
 }
 
-/* Custom bullet points for results */
+/* Custom checkmark bullet points */
 .results-list li::before {
-  content: '→';
+  content: '✓';
   position: absolute;
   left: 0;
   top: 0;
@@ -363,156 +416,246 @@ html {
   font-size: 1.25rem;
 }
 
+/* Bold text in results */
 .results-list li strong {
-  font-weight: 700;
-  color: #1a1a1a;
+  font-weight: 600;
+  color: #363636;
 }
 
 /* ================================================
-   9. CASE STUDY SPECIFIC STYLES
+   8. WEBSITE LINK SECTION
    ================================================ */
 
-/* Case study runs inside modal iframe - no additional modal styling needed */
+/* Website link section */
+.website-link-section {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
 
-/* ================================================
-   9. SCROLL ANIMATIONS
-   ================================================ */
+.website-link {
+  margin: 0;
+  padding: 0;
+}
 
-/* GSAP handles all animations - no CSS animations needed */
+.website-link a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6C6C6C;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.website-link a:hover {
+  color: #363636;
+}
 
 /* ================================================
    10. RESPONSIVE DESIGN
    ================================================ */
 
-/* Tablet and smaller (max-width: 768px) */
+/* Tablet and mobile responsiveness */
 @media (max-width: 768px) {
-  /* Adjust container padding and width */
   .case-container {
+    padding: 3rem 1.5rem 3rem;
     max-width: 100%;
-    padding: 5rem 1.5rem 3rem;
   }
-  
-  /* Scale down typography */
+
   .case-title {
-    font-size: 2.5rem; /* 40px */
-    margin-bottom: 1rem;
+    font-size: 3rem;
   }
-  
+
   .case-description {
-    font-size: 1.125rem; /* 18px */
+    font-size: 0.875rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Mobile spacing adjustments */
+  .what-company-section {
+    margin-bottom: 3rem; /* Reduce spacing on mobile */
+  }
+
+  .context-section {
+    margin-bottom: 3rem; /* Reduce spacing on mobile */
+  }
+
+  .what-was-done-section .section-image {
+    margin-top: 1.5rem; /* Reduce spacing on mobile */
+    margin-bottom: 2.5rem; /* Reduce spacing on mobile */
+  }
+
+  .first-grid-section {
+    margin-bottom: 3rem; /* Reduce spacing on mobile */
+  }
+
+  .second-grid-section {
+    margin-bottom: 2.5rem; /* Reduce spacing on mobile */
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     margin-bottom: 2rem;
   }
-  
-  .section-title {
-    font-size: 2rem; /* 32px */
-    margin-bottom: 1rem;
+
+  .hero-image-vertical {
+    grid-column: 1;
+    grid-row: 1;
   }
-  
-  .section-text {
-    font-size: 1rem; /* 16px */
-    margin-bottom: 1.5rem;
+
+  .hero-image-horizontal:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
   }
-  
-  /* Adjust layouts for mobile */
-  .hero-images {
+
+  .hero-image-horizontal:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .process-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    margin-bottom: 2rem;
+  }
+
+  .process-image-vertical {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .process-image-horizontal:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .process-image-horizontal:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .features-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
-  .hero-image-bottom {
-    grid-column: 1;
-  }
-  
-  /* Stack section images vertically */
+
   .section-images-grid {
+    grid-template-columns: 1fr;
     gap: 1rem;
-  }
-  
-  /* Adjust interactions layout */
-  .interactions-grid {
-    gap: 1rem;
-  }
-  
-  /* Results section mobile adjustments */
-  .results-section {
-    /* No special mobile styling needed */
-  }
-  
-  .results-list li {
-    font-size: 1rem;
-    padding-left: 1.5rem;
-  }
-  
-  /* Modal mobile adjustments */
-  .case-container .modal-iframe {
-    width: 95vw;
-    height: 85vh;
     border-radius: 12px;
   }
-  
-  .case-container .project-modal-overlay {
-    padding: 1rem;
-  }
-}
 
-/* Medium mobile (max-width: 520px) */
-@media (max-width: 520px) {
-  /* UI shots sizing - same as 768px with left padding */
-  .interactions-grid {
-    gap: 1rem;
-    padding-left: 1rem; /* Add left padding */
-  }
-}
-
-/* Small mobile (max-width: 420px) */
-@media (max-width: 420px) {
-  /* UI shots sizing - same as 768px with left padding */
-  .interactions-grid {
-    gap: 1rem;
-    padding-left: 1rem; /* Add left padding */
-  }
-}
-
-/* Extra small mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  /* Further typography adjustments */
-  .case-title {
-    font-size: 2rem; /* 32px */
-  }
-  
-  .case-description {
-    font-size: 1rem; /* 16px */
-  }
-  
-  .section-title {
-    font-size: 1.75rem; /* 28px */
-  }
-  
-  /* Smaller gaps for mobile */
-  .hero-images,
-  .section-images-grid,
-  .interactions-grid {
-    gap: 0.75rem;
-  }
-  
-  /* Compact results section */
   .results-section {
-    /* No special mobile styling needed */
+    padding-top: 2rem;
   }
-  
-  /* Navigation adjustments */
+
+  .results-list li {
+    font-size: 1rem;
+  }
+
+  /* Mobile website link adjustments */
+  .website-link-section {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .website-link a {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .case-title {
+    font-size: 2.5rem;
+  }
+
+  .case-description {
+    font-size: 0.875rem;
+  }
+
+  .section-title {
+    font-size: 1.125rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-images,
+  .process-images {
+    gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .hero-image-vertical,
+  .process-image-vertical {
+    width: 100%;
+  }
+
+  .hero-image-horizontal,
+  .process-image-horizontal {
+    width: 100%;
+  }
+
+  .results-section {
+    padding-top: 2rem;
+  }
+
   .nav-bar {
+    top: 1rem;
     left: 1rem;
     right: 1rem;
   }
-  
+
   .nav-button {
-    font-size: 0.875rem;
-    padding: 10px 16px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
-  .section-image{
-    border-radius: 0.5rem;
+  .section-image {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Small mobile spacing adjustments */
+  .what-company-section {
+    margin-bottom: 2rem; /* Further reduce spacing on small mobile */
+  }
+
+  .context-section {
+    margin-bottom: 2rem; /* Further reduce spacing on small mobile */
+  }
+
+  .what-was-done-section .section-image {
+    margin-top: 1rem; /* Further reduce spacing on small mobile */
+    margin-bottom: 2rem; /* Further reduce spacing on small mobile */
+  }
+
+  .first-grid-section {
+    margin-bottom: 2rem; /* Further reduce spacing on small mobile */
+  }
+
+  .second-grid-section {
+    margin-bottom: 2rem; /* Further reduce spacing on small mobile */
+  }
+
+  /* Small mobile website link adjustments */
+  .website-link-section {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .website-link a {
+    font-size: 0.75rem;
   }
 }
 
@@ -527,15 +670,15 @@ html {
   color: inherit;
 }
 
-/* Page Transition Overlay */
+/* Page transition overlay */
 .page-transition-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--background-color);
-  z-index: 10000;
+  background-color: #fff;
+  z-index: 99999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
