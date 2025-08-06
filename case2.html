@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Breadly - Food Ordering Platform</title>
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/schibstedgrotesk/v2/RrQXbohi_ic6B3yVSzGBrMx6ZI_cx1op7g.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/casetwofrom1.webp" as="image">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+  
   <link rel="stylesheet" href="css/case2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="assets/faviconbreadly.svg" type="image/svg+xml">
@@ -35,10 +41,10 @@
           <img src="assets/casetwofrom1.webp" alt="Breadly Food Ordering Platform Hero Image 1">
         </div>
         <div class="hero-image-horizontal">
-          <img src="assets/casetwofrom2.webp" alt="Breadly Food Ordering Platform Hero Image 2">
+          <img src="assets/casetwofrom2.webp" alt="Breadly Food Ordering Platform Hero Image 2" loading="lazy">
         </div>
         <div class="hero-image-horizontal">
-          <img src="assets/casetwofrom3.webp" alt="Breadly Food Ordering Platform Hero Image 3">
+          <img src="assets/casetwofrom3.webp" alt="Breadly Food Ordering Platform Hero Image 3" loading="lazy">
         </div>
       </div>
     </section>
@@ -53,7 +59,7 @@
       </p>
       
       <div class="section-image">
-        <img src="assets/casetwofrom4.webp" alt="Breadly Company Image">
+        <img src="assets/casetwofrom4.webp" alt="Breadly Company Image" loading="lazy">
       </div>
     </section>
 
@@ -76,7 +82,7 @@
       </p>
       
       <div class="section-image">
-        <img src="assets/casetwofrom5.webp" alt="Breadly What Was Done Image">
+        <img src="assets/casetwofrom5.webp" alt="Breadly What Was Done Image" loading="lazy">
       </div>
     </section>
 
@@ -84,13 +90,13 @@
     <section class="case-section first-grid-section">
       <div class="process-images">
         <div class="process-image-vertical">
-          <img src="assets/casetwofrom6.webp" alt="Breadly Process Image 1">
+          <img src="assets/casetwofrom6.webp" alt="Breadly Process Image 1" loading="lazy">
         </div>
         <div class="process-image-horizontal">
-          <img src="assets/casetwofrom7.webp" alt="Breadly Process Image 2">
+          <img src="assets/casetwofrom7.webp" alt="Breadly Process Image 2" loading="lazy">
         </div>
         <div class="process-image-horizontal">
-          <img src="assets/casetwofrom8.webp" alt="Breadly Process Image 3">
+          <img src="assets/casetwofrom8.webp" alt="Breadly Process Image 3" loading="lazy">
         </div>
       </div>
     </section>
@@ -99,13 +105,13 @@
     <section class="case-section second-grid-section">
       <div class="process-images">
         <div class="process-image-vertical">
-          <img src="assets/casetwofrom9.webp" alt="Breadly Features Image 1">
+          <img src="assets/casetwofrom9.webp" alt="Breadly Features Image 1" loading="lazy">
         </div>
         <div class="process-image-horizontal">
-          <img src="assets/casetwofrom10.webp" alt="Breadly Features Image 2">
+          <img src="assets/casetwofrom10.webp" alt="Breadly Features Image 2" loading="lazy">
         </div>
         <div class="process-image-horizontal">
-          <img src="assets/casetwofrom11.webp" alt="Breadly Features Image 3">
+          <img src="assets/casetwofrom11.webp" alt="Breadly Features Image 3" loading="lazy">
         </div>
       </div>
     </section>
@@ -113,7 +119,7 @@
     <!-- Final Single Image Section -->
     <section class="case-section final-image-section">
       <div class="section-image">
-        <img src="assets/casetwofrom12.webp" alt="Breadly Final Design">
+        <img src="assets/casetwofrom12.webp" alt="Breadly Final Design" loading="lazy">
       </div>
     </section>
 
@@ -150,12 +156,12 @@
   </div>
 
   <!-- GSAP Animation Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   
   <!-- Page Transition Overlay -->
   <div class="page-transition-overlay"></div>
   
-  <script src="js/case2.js"></script>
+  <script src="js/case2.js" defer></script>
 </body>
 </html>

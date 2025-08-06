@@ -41,6 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
   initGSAPScrollAnimations();
 });
 
+// Handle browser back/forward navigation to re-run animations
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    console.log('✅ Page restored from cache');
+    // Page was restored from bfcache, re-run animations
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      // Reset any existing animations
+      gsap.killTweensOf('*');
+      ScrollTrigger.killAll();
+      
+      // Re-register plugin and initialize animations
+      gsap.registerPlugin(ScrollTrigger);
+      initGSAPScrollAnimations();
+    }
+  }
+});
+
 // Function to open modal with animation
 function openModal(imageSrc, imageAlt) {
   const modal = document.getElementById('imageModal');
