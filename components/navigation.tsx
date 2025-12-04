@@ -20,9 +20,10 @@ export function Navigation({ variant = "home" }: NavigationProps) {
           </Link>
           {/* Uncomment for Resume button */}
           <Link
-            href="/resume.pdf"
+            href="/Asilbek_Khamidullayev.pdf"
             target="_blank"
             className="pointer-events-auto"
+            download="Asilbek_Khamidullayev"
           >
             <Button variant="nav" className="px-6 py-3 text-sm tracking-wider">
               RESUME
